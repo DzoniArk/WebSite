@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>R Marine Consultants | Naval Architecture & AI Transformation</title>
+<meta name="description" content="A collective of naval architects and marine engineers delivering AI transformation, concept design, regulatory compliance, and purpose-built maritime software. Delft based, global scope.">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --c1: #0A101A; --c2: #0C1F34; --c3: #102945;
+  --c4: #B3B3B3; --c5: #CFCED0; --c6: #C18D21;
+  --white: #FFFFFF;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--c1); color: var(--c5); font-family: 'Inter', sans-serif; margin: 0; }
+
+/* ════════════════════════════════
+   NAV
+════════════════════════════════ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(10,16,26,0.92); backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(193,141,33,0.15);
+}
+.nav-inner {
+  max-width: 1120px; margin: 0 auto; padding: 0 2.5rem;
+  height: 68px; display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo { display: flex; align-items: center; gap: 0.85rem; text-decoration: none; }
+.logo-mark {
+  width: 30px; height: 44px; border: 1.5px solid var(--c6);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.logo-mark span { font-family: 'Cinzel', serif; font-size: 1.15rem; font-weight: 700; color: var(--c6); line-height: 1; }
+.logo-wordmark { line-height: 1.2; }
+.logo-marine { font-family: 'Cinzel', serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--c6); display: block; }
+.logo-consultants { font-family: 'Cinzel', serif; font-size: 0.48rem; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--c6); opacity: 0.75; display: block; }
+.nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
+.nav-links a { font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.04em; color: var(--c4); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover { color: var(--c6); }
+.nav-links .nav-cta { font-family: 'Cinzel', serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; background: var(--c6); color: var(--c1) !important; padding: 0.55rem 1.25rem; border-radius: 2px; transition: opacity 0.2s !important; }
+.nav-links .nav-cta:hover { opacity: 0.88; }
+
+/* ════════════════════════════════
+   SHARED
+════════════════════════════════ */
+.container { max-width: 1120px; margin: 0 auto; }
+.section-eyebrow {
+  display: flex; align-items: center; gap: 0.65rem;
+  font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 600;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--c6); margin-bottom: 1.25rem;
+}
+.section-eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: var(--c6); }
+.section-title { font-family: 'Cinzel', serif; font-size: clamp(1.75rem, 3vw, 2.75rem); font-weight: 700; color: var(--white); line-height: 1.15; letter-spacing: 0.02em; }
+.btn-primary { font-family: 'Cinzel', serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; background: var(--c6); color: var(--c1); padding: 0.85rem 2rem; border-radius: 2px; border: none; cursor: pointer; text-decoration: none; display: inline-block; transition: opacity 0.2s, transform 0.2s; }
+.btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+.btn-secondary { font-family: 'Cinzel', serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; background: transparent; color: var(--c6); padding: 0.85rem 2rem; border-radius: 2px; border: 1px solid var(--c6); cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.2s; }
+.btn-secondary:hover { background: rgba(193,141,33,0.08); }
+
+/* ════════════════════════════════
+   HERO
+════════════════════════════════ */
+.hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-top: 68px; position: relative; overflow: hidden; }
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background: linear-gradient(to bottom, rgba(10,16,26,0.6) 0%, rgba(10,16,26,0.95) 100%), url('port-night.jpg') center/cover no-repeat;
+}
+.hero-bg::after { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(193,141,33,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(193,141,33,0.04) 1px, transparent 1px); background-size: 60px 60px; }
+.hero-content { position: relative; z-index: 1; max-width: 1120px; margin: 0 auto; padding: 0 2.5rem; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.hero-right { display: flex; align-items: center; justify-content: center; }
+.hero-image-frame { position: relative; width: 100%; max-width: 480px; }
+.hero-image-frame::before { content: ''; position: absolute; top: -14px; right: -14px; bottom: 14px; left: 14px; border: 1.5px solid var(--c6); opacity: 0.5; z-index: 0; }
+.hero-image-frame::after { content: ''; position: absolute; top: 14px; right: 14px; bottom: -14px; left: -14px; border: 1px solid rgba(193,141,33,0.2); z-index: 0; }
+.hero-image-frame img { position: relative; z-index: 1; width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; filter: brightness(0.88) contrast(1.05); background: var(--c3); }
+.frame-corner { position: absolute; z-index: 2; width: 20px; height: 20px; }
+.frame-corner::before, .frame-corner::after { content: ''; position: absolute; background: var(--c6); }
+.frame-corner::before { width: 100%; height: 2px; top: 0; left: 0; }
+.frame-corner::after { width: 2px; height: 100%; top: 0; left: 0; }
+.fc-tl { top: 0; left: 0; } .fc-tr { top: 0; right: 0; transform: scaleX(-1); }
+.fc-bl { bottom: 0; left: 0; transform: scaleY(-1); } .fc-br { bottom: 0; right: 0; transform: scale(-1); }
+.hero-eyebrow { display: inline-flex; align-items: center; gap: 0.65rem; font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--c6); margin-bottom: 1.75rem; }
+.hero-eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: var(--c6); }
+.hero-h1 { font-family: 'Cinzel', serif; font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 700; color: var(--white); line-height: 1.1; letter-spacing: 0.02em; margin-bottom: 0.5rem; max-width: 700px; }
+.hero-h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 500; color: var(--c6); line-height: 1.3; margin-bottom: 2rem; max-width: 600px; }
+.hero-body { font-family: 'Inter', sans-serif; font-size: 1rem; color: var(--c4); line-height: 1.8; max-width: 520px; margin-bottom: 2.75rem; }
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; margin-bottom: 5rem; }
+.hero-stats { display: flex; gap: 0; border-top: 1px solid rgba(193,141,33,0.2); max-width: 560px; }
+.hero-stat { flex: 1; padding: 1.5rem 2rem; border-right: 1px solid rgba(193,141,33,0.15); }
+.hero-stat:last-child { border-right: none; } .hero-stat:first-child { padding-left: 0; }
+.stat-value { font-family: 'Cinzel', serif; font-size: 1.6rem; font-weight: 700; color: var(--c6); line-height: 1; margin-bottom: 0.3rem; }
+.stat-label { font-family: 'Inter', sans-serif; font-size: 0.7rem; color: var(--c4); line-height: 1.4; }
+.scroll-hint { position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; font-family: 'Inter', sans-serif; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--c4); opacity: 0.5; }
+.scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--c6), transparent); animation: scrollpulse 2s ease-in-out infinite; }
+@keyframes scrollpulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
+
+/* ════════════════════════════════
+   SERVICES
+════════════════════════════════ */
+.services-hero { padding: 7rem 2.5rem 5rem; position: relative; overflow: hidden; background: var(--c1); }
+.services-hero-bg { position: absolute; inset: 0; z-index: 0; background: linear-gradient(135deg, rgba(10,16,26,0.97) 0%, rgba(12,31,52,0.88) 60%, rgba(10,16,26,0.97) 100%), url('port-night.jpg') center/cover no-repeat; }
+.services-hero-bg::after { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(193,141,33,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(193,141,33,0.04) 1px, transparent 1px); background-size: 60px 60px; }
+.services-hero .container { position: relative; z-index: 1; }
+.services-hero .section-title { margin-bottom: 0.75rem; max-width: 700px; margin-top: 0.5rem; }
+.services-hero-sub { font-family: 'Playfair Display', serif; font-size: clamp(1rem, 2vw, 1.2rem); font-weight: 500; color: var(--c6); font-style: italic; line-height: 1.6; max-width: 640px; }
+.cycle-intro { background: var(--c2); padding: 2.5rem; border-bottom: 1px solid rgba(193,141,33,0.12); }
+.cycle-row { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.5rem; }
+.cycle-label { font-family: 'Cinzel', serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--c6); padding: 0.55rem 1.25rem; border: 1px solid rgba(193,141,33,0.3); background: rgba(193,141,33,0.07); white-space: nowrap; }
+.cycle-arrow { font-size: 0.85rem; color: rgba(193,141,33,0.4); padding: 0 0.25rem; flex-shrink: 0; }
+.cycle-caption { font-family: 'Inter', sans-serif; font-size: 0.72rem; color: var(--c4); text-align: center; margin-top: 1.25rem; width: 100%; letter-spacing: 0.04em; }
+.stream { padding: 8rem 2.5rem; }
+.stream:nth-child(odd) { background: var(--c1); }
+.stream:nth-child(even) { background: var(--c2); }
+.stream-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: start; }
+.stream-grid.reverse { direction: rtl; }
+.stream-grid.reverse > * { direction: ltr; }
+.stream-number { font-family: 'Cinzel', serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em; color: rgba(193,141,33,0.4); margin-bottom: 0.5rem; }
+.stream-name { font-family: 'Cinzel', serif; font-size: clamp(1.3rem, 2.5vw, 1.9rem); font-weight: 700; color: var(--white); line-height: 1.15; letter-spacing: 0.02em; margin-bottom: 0.5rem; }
+.stream-tagline { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 500; color: var(--c6); font-style: italic; margin-bottom: 1.5rem; line-height: 1.5; }
+.stream-desc { font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--c4); line-height: 1.85; margin-bottom: 2rem; }
+.stream-desc strong { color: var(--white); }
+.stream-items { display: flex; flex-direction: column; gap: 1px; background: rgba(193,141,33,0.1); border: 1px solid rgba(193,141,33,0.1); }
+.stream-item { background: var(--c3); padding: 1.5rem 1.75rem; transition: background 0.2s; position: relative; }
+.stream-item:hover { background: rgba(16,41,69,0.95); }
+.stream-item::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: var(--c6); transform: scaleY(0); transition: transform 0.2s; transform-origin: top; }
+.stream-item:hover::before { transform: scaleY(1); }
+.item-name { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 600; color: var(--white); margin-bottom: 0.4rem; }
+.item-desc { font-family: 'Inter', sans-serif; font-size: 0.8rem; color: var(--c4); line-height: 1.7; }
+.classic { padding: 5rem 2.5rem; background: var(--c2); border-top: 1px solid rgba(193,141,33,0.12); }
+.classic-header { margin-bottom: 3rem; }
+.classic-header .section-title { margin-top: 0.5rem; margin-bottom: 0.75rem; }
+.classic-header p { font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--c4); line-height: 1.8; max-width: 560px; }
+.classic-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(193,141,33,0.1); border: 1px solid rgba(193,141,33,0.1); }
+.classic-card { background: var(--c1); padding: 1.75rem; position: relative; transition: background 0.25s; }
+.classic-card:hover { background: var(--c3); }
+.classic-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--c6); transform: scaleX(0); transition: transform 0.25s; transform-origin: left; }
+.classic-card:hover::before { transform: scaleX(1); }
+.classic-num { font-family: 'Cinzel', serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; color: rgba(193,141,33,0.3); margin-bottom: 1rem; }
+.classic-name { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 600; color: var(--white); margin-bottom: 0.5rem; line-height: 1.3; }
+.classic-desc { font-family: 'Inter', sans-serif; font-size: 0.78rem; color: var(--c4); line-height: 1.7; }
+.cta-strip { padding: 5rem 2.5rem; background: var(--c1); text-align: center; }
+.cta-strip h2 { font-family: 'Cinzel', serif; font-size: clamp(1.3rem, 2.5vw, 2rem); font-weight: 700; color: var(--white); margin-bottom: 1rem; letter-spacing: 0.02em; }
+.cta-strip p { font-family: 'Inter', sans-serif; font-size: 0.92rem; color: var(--c4); line-height: 1.8; max-width: 500px; margin: 0 auto 2.5rem; }
+.btn-gold { font-family: 'Cinzel', serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; background: var(--c6); color: var(--c1); padding: 0.9rem 2.25rem; border-radius: 2px; border: none; cursor: pointer; text-decoration: none; display: inline-block; transition: opacity 0.2s, transform 0.2s; }
+.btn-gold:hover { opacity: 0.88; transform: translateY(-1px); }
+
+/* ════════════════════════════════
+   ABOUT
+════════════════════════════════ */
+.about-hero { padding: 7rem 2.5rem 5rem; position: relative; overflow: hidden; }
+.about-hero-bg { position: absolute; inset: 0; z-index: 0; background: linear-gradient(135deg, rgba(10,16,26,0.97) 0%, rgba(12,31,52,0.88) 60%, rgba(10,16,26,0.97) 100%), url('port-night.jpg') center/cover no-repeat; }
+.about-hero-bg::after { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(193,141,33,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(193,141,33,0.04) 1px, transparent 1px); background-size: 60px 60px; }
+.about-hero .container { position: relative; z-index: 1; }
+.about-hero-title { font-family: 'Cinzel', serif; font-size: clamp(1.9rem, 4vw, 3.2rem); font-weight: 700; color: var(--white); line-height: 1.1; letter-spacing: 0.02em; margin-bottom: 0.75rem; max-width: 780px; }
+.about-hero-sub { font-family: 'Playfair Display', serif; font-size: clamp(1rem, 2vw, 1.25rem); font-weight: 500; color: var(--c6); line-height: 1.6; max-width: 700px; font-style: italic; }
+.who { padding: 6rem 2.5rem; background: var(--c2); }
+.who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+.who-text p { font-family: 'Inter', sans-serif; font-size: 0.92rem; color: var(--c4); line-height: 1.85; margin-bottom: 1.25rem; }
+.who-text p strong { color: var(--white); font-weight: 600; }
+.who-text p:last-of-type { margin-bottom: 2rem; }
+.about-link { display: inline-flex; align-items: center; gap: 0.6rem; font-family: 'Cinzel', serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c6); text-decoration: none; transition: gap 0.2s; }
+.about-link:hover { gap: 0.9rem; }
+.who-panel { display: flex; flex-direction: column; gap: 1.25rem; }
+.pull-quote { background: rgba(10,16,26,0.6); border: 1px solid rgba(193,141,33,0.2); border-left: 3px solid var(--c6); padding: 1.75rem 2rem; }
+.pull-quote p { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 500; color: var(--c5); line-height: 1.7; font-style: italic; }
+.cap-box { background: rgba(10,16,26,0.6); border: 1px solid rgba(193,141,33,0.15); padding: 1.75rem 2rem; }
+.cap-box-title { font-family: 'Cinzel', serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--c6); margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid rgba(193,141,33,0.15); }
+.cap-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.cap-tag { font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 500; color: var(--c5); background: rgba(193,141,33,0.07); border: 1px solid rgba(193,141,33,0.15); padding: 0.3rem 0.8rem; }
+.philosophy { padding: 6rem 2.5rem; background: var(--c1); }
+.philosophy-header { text-align: center; margin-bottom: 4rem; }
+.philosophy-header .section-title { margin-bottom: 1rem; }
+.philosophy-header p { font-family: 'Inter', sans-serif; font-size: 0.95rem; color: var(--c4); line-height: 1.8; max-width: 560px; margin: 0 auto; }
+.pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(193,141,33,0.12); border: 1px solid rgba(193,141,33,0.12); margin-bottom: 2rem; }
+.pillar { background: var(--c2); padding: 2.5rem; position: relative; transition: background 0.25s; }
+.pillar:hover { background: var(--c3); }
+.pillar::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--c6); transform: scaleX(0); transition: transform 0.25s; transform-origin: left; }
+.pillar:hover::before { transform: scaleX(1); }
+.pillar-number { font-family: 'Cinzel', serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.15em; color: rgba(193,141,33,0.35); margin-bottom: 1.25rem; }
+.pillar-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; color: var(--white); margin-bottom: 0.35rem; line-height: 1.3; }
+.pillar-tagline { font-family: 'Playfair Display', serif; font-size: 0.82rem; font-weight: 500; color: var(--c6); font-style: italic; margin-bottom: 1rem; }
+.pillar-desc { font-family: 'Inter', sans-serif; font-size: 0.82rem; color: var(--c4); line-height: 1.75; }
+.cycle-strip { background: var(--c2); border: 1px solid rgba(193,141,33,0.15); padding: 1.75rem 2.5rem; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0; }
+.cycle-strip .cycle-label { font-family: 'Cinzel', serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c6); padding: 0.5rem 1.25rem; border: 1px solid rgba(193,141,33,0.25); background: rgba(193,141,33,0.06); }
+.cycle-strip .cycle-arrow { font-size: 0.85rem; color: rgba(193,141,33,0.4); padding: 0 0.75rem; }
+.cycle-strip .cycle-sub { font-family: 'Inter', sans-serif; font-size: 0.7rem; color: var(--c4); text-align: center; margin-top: 1.25rem; width: 100%; letter-spacing: 0.04em; }
+.bridge { padding: 6rem 2.5rem; background: var(--c2); }
+.bridge-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.bridge-text p { font-family: 'Inter', sans-serif; font-size: 0.92rem; color: var(--c4); line-height: 1.85; margin-bottom: 1.25rem; }
+.bridge-text p strong { color: var(--white); }
+.bridge-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(193,141,33,0.12); border: 1px solid rgba(193,141,33,0.12); }
+.bridge-cell { background: var(--c1); padding: 1.75rem; }
+.bridge-cell-title { font-family: 'Cinzel', serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c6); margin-bottom: 1rem; padding-bottom: 0.65rem; border-bottom: 1px solid rgba(193,141,33,0.15); }
+.bridge-cell ul { list-style: none; }
+.bridge-cell ul li { font-family: 'Inter', sans-serif; font-size: 0.8rem; color: var(--c4); padding: 0.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.04); display: flex; align-items: center; gap: 0.6rem; }
+.bridge-cell ul li:last-child { border-bottom: none; }
+.bridge-cell ul li::before { content: '—'; color: var(--c6); font-size: 0.7rem; flex-shrink: 0; }
+
+/* ════════════════════════════════
+   CONTACT
+════════════════════════════════ */
+.contact { padding: 7rem 2.5rem; position: relative; overflow: hidden; background: var(--c1); }
+.contact-bg { position: absolute; inset: 0; z-index: 0; background: linear-gradient(135deg, rgba(10,16,26,0.98) 0%, rgba(12,31,52,0.92) 50%, rgba(10,16,26,0.98) 100%), url('port-night.jpg') center/cover no-repeat; }
+.contact-bg::after { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(193,141,33,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(193,141,33,0.03) 1px, transparent 1px); background-size: 60px 60px; }
+.contact .container { position: relative; z-index: 1; }
+.contact-title { font-family: 'Cinzel', serif; font-size: clamp(1.9rem, 4vw, 3rem); font-weight: 700; color: var(--white); line-height: 1.1; letter-spacing: 0.02em; margin-bottom: 0.75rem; max-width: 600px; }
+.contact-sub { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 500; color: var(--c6); font-style: italic; margin-bottom: 4rem; max-width: 520px; line-height: 1.6; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; align-items: start; }
+.contact-details { display: flex; flex-direction: column; gap: 1.5rem; }
+.detail-block { background: rgba(12,31,52,0.7); border: 1px solid rgba(193,141,33,0.15); padding: 1.5rem 1.75rem; display: flex; align-items: flex-start; gap: 1.25rem; }
+.detail-icon { width: 36px; height: 36px; flex-shrink: 0; border: 1px solid rgba(193,141,33,0.3); display: flex; align-items: center; justify-content: center; color: var(--c6); font-size: 0.9rem; }
+.detail-label { font-family: 'Cinzel', serif; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--c6); margin-bottom: 0.3rem; }
+.detail-value { font-family: 'Inter', sans-serif; font-size: 0.88rem; color: var(--c5); line-height: 1.5; }
+.detail-value a { color: var(--c5); text-decoration: none; transition: color 0.2s; }
+.detail-value a:hover { color: var(--c6); }
+.linkedin-btn { display: inline-flex; align-items: center; gap: 0.6rem; font-family: 'Cinzel', serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c6); text-decoration: none; border: 1px solid rgba(193,141,33,0.3); padding: 0.75rem 1.5rem; transition: background 0.2s; align-self: flex-start; }
+.linkedin-btn:hover { background: rgba(193,141,33,0.08); }
+.contact-form { background: rgba(12,31,52,0.7); border: 1px solid rgba(193,141,33,0.15); padding: 2.5rem; }
+.form-title { font-family: 'Cinzel', serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--c6); margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(193,141,33,0.15); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+.form-group:last-of-type { margin-bottom: 1.5rem; }
+label { font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--c4); }
+input, select, textarea { background: rgba(10,16,26,0.8); border: 1px solid rgba(193,141,33,0.2); color: var(--white); font-family: 'Inter', sans-serif; font-size: 0.88rem; padding: 0.75rem 1rem; outline: none; transition: border-color 0.2s; width: 100%; }
+input:focus, select:focus, textarea:focus { border-color: var(--c6); }
+input::placeholder, textarea::placeholder { color: rgba(179,179,179,0.4); }
+select { appearance: none; cursor: pointer; }
+select option { background: var(--c2); }
+textarea { resize: vertical; min-height: 130px; }
+.btn-submit { font-family: 'Cinzel', serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; background: var(--c6); color: var(--c1); padding: 0.9rem 2.5rem; border: none; cursor: pointer; width: 100%; transition: opacity 0.2s, transform 0.2s; }
+.btn-submit:hover { opacity: 0.88; transform: translateY(-1px); }
+.form-note { font-family: 'Inter', sans-serif; font-size: 0.72rem; color: var(--c4); text-align: center; margin-top: 1rem; line-height: 1.6; opacity: 0.7; }
+
+/* ════════════════════════════════
+   NAVAL ARCHITECTURE
+════════════════════════════════ */
+.naval {
+  padding: 7rem 2.5rem;
+  background: var(--c1);
+  position: relative; overflow: hidden;
+}
+.naval-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background:
+    linear-gradient(to right, rgba(10,16,26,0.98) 0%, rgba(10,16,26,0.85) 100%),
+    url('ship-bow.jpg') center/cover no-repeat;
+}
+.naval-header {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 4rem; align-items: end; margin-bottom: 3.5rem;
+}
+.naval-intro {
+  font-family: 'Inter', sans-serif; font-size: 0.95rem;
+  color: var(--c4); line-height: 1.8; align-self: end;
+}
+.naval-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1.5rem; margin-bottom: 3rem;
+}
+.naval-card {
+  background: rgba(12,31,52,0.8);
+  border: 1px solid rgba(193,141,33,0.2);
+  border-top: 3px solid var(--c6);
+  padding: 2.5rem;
+  backdrop-filter: blur(8px);
+  transition: border-color 0.25s, transform 0.25s;
+}
+.naval-card:hover { border-color: rgba(193,141,33,0.6); transform: translateY(-4px); }
+.naval-card-number {
+  font-family: 'Cinzel', serif; font-size: 0.6rem; font-weight: 700;
+  letter-spacing: 0.2em; color: rgba(193,141,33,0.4); margin-bottom: 1.25rem;
+}
+.naval-card-name {
+  font-family: 'Cinzel', serif; font-size: 1.4rem; font-weight: 700;
+  color: var(--white); margin-bottom: 0.4rem; letter-spacing: 0.02em;
+}
+.naval-card-tagline {
+  font-family: 'Playfair Display', serif; font-size: 0.95rem;
+  font-weight: 500; color: var(--c6); font-style: italic;
+  margin-bottom: 1.25rem; line-height: 1.5;
+}
+.naval-card-desc {
+  font-family: 'Inter', sans-serif; font-size: 0.85rem;
+  color: var(--c4); line-height: 1.8; margin-bottom: 1.5rem;
+}
+.naval-card-list { list-style: none; }
+.naval-card-list li {
+  font-family: 'Inter', sans-serif; font-size: 0.8rem; color: var(--c5);
+  padding: 0.45rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+  display: flex; align-items: center; gap: 0.65rem;
+}
+.naval-card-list li:last-child { border-bottom: none; }
+.naval-card-list li::before { content: '—'; color: var(--c6); font-size: 0.7rem; flex-shrink: 0; }
+.naval-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 1.5rem;
+  padding-top: 2.5rem; border-top: 1px solid rgba(193,141,33,0.15);
+}
+.naval-footer-label {
+  font-family: 'Cinzel', serif; font-size: 0.6rem; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--c4);
+  margin-bottom: 0.75rem;
+}
+.naval-footer-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.naval-tag {
+  font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 500;
+  color: var(--c5); background: rgba(193,141,33,0.07);
+  border: 1px solid rgba(193,141,33,0.15); padding: 0.3rem 0.85rem;
+}
+
+/* ════════════════════════════════
+   FOOTER
+════════════════════════════════ */
+footer {
+  background: var(--c1);
+  border-top: 1px solid rgba(193,141,33,0.15);
+  padding: 2.5rem;
+}
+.footer-inner {
+  max-width: 1120px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+}
+.footer-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+.footer-copy { font-family: 'Inter', sans-serif; font-size: 0.72rem; color: var(--c4); }
+.footer-links { display: flex; gap: 2rem; }
+.footer-links a { font-family: 'Inter', sans-serif; font-size: 0.72rem; color: var(--c4); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--c6); }
+
+/* ════════════════════════════════
+   RESPONSIVE
+════════════════════════════════ */
+@media(max-width: 900px) {
+  .hero-content { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .stream-grid, .stream-grid.reverse { grid-template-columns: 1fr; direction: ltr; gap: 2.5rem; }
+  .naval-header, .naval-grid { grid-template-columns: 1fr; }
+  .who-grid, .bridge-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .pillars-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .form-row { grid-template-columns: 1fr; }
+}
+@media(max-width: 700px) {
+  .nav-links { display: none; }
+  .hero-stats { flex-direction: column; }
+  .hero-stat { border-right: none; border-bottom: 1px solid rgba(193,141,33,0.15); padding: 1rem 0 !important; }
+  .hero-stat:last-child { border-bottom: none; }
+  .stream, .naval, .contact, .about-hero, .who, .philosophy, .bridge { padding-left: 1.5rem; padding-right: 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════ NAV ════ -->
+<nav>
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">
+      <div class="logo-mark"><span>R</span></div>
+      <div class="logo-wordmark">
+        <span class="logo-marine">Marine</span>
+        <span class="logo-consultants">Consultants</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#naval">Naval Architecture</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ════ HERO ════ -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Naval Architecture &amp; AI Transformation</div>
+      <h1 class="hero-h1">Precision Engineering</h1>
+      <h2 class="hero-h2">For the Maritime Industry</h2>
+      <p class="hero-body">A collective of naval architects and marine engineers delivering AI transformation, concept design, regulatory compliance, and purpose-built maritime software.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Discuss a Project</a>
+        <a href="#services" class="btn-secondary">Our Services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="stat-value">100+</div>
+          <div class="stat-label">Combined years of<br>industry experience</div>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-value">4+</div>
+          <div class="stat-label">Specialist naval<br>architects</div>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-value">2</div>
+          <div class="stat-label">Maritime SaaS<br>products</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-image-frame">
+        <div class="frame-corner fc-tl"></div>
+        <div class="frame-corner fc-tr"></div>
+        <div class="frame-corner fc-bl"></div>
+        <div class="frame-corner fc-br"></div>
+        <img src="hero-ship.jpg" alt="Port at sunset with crane silhouettes"/>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint"><div class="scroll-line"></div>Scroll</div>
+</section>
+
+<!-- ════ SERVICES ════ -->
+<section class="services-hero" id="services">
+  <div class="services-hero-bg"></div>
+  <div class="container">
+    <div class="section-eyebrow">What We Do</div>
+    <h2 class="section-title">Three Integrated Service Streams</h2>
+    <p class="services-hero-sub">A virtuous cycle — transforming culture, deploying intelligent agents, and accelerating digital delivery. Each stream reinforces the next.</p>
+  </div>
+</section>
+
+<div class="cycle-intro">
+  <div class="container">
+    <div class="cycle-row">
+      <div class="cycle-label">Cultural Architecture</div>
+      <div class="cycle-arrow">&rarr;</div>
+      <div class="cycle-label">AI Agent Integration</div>
+      <div class="cycle-arrow">&rarr;</div>
+      <div class="cycle-label">Digital Shipbuilding</div>
+      <div class="cycle-arrow">&rarr;</div>
+      <div class="cycle-label">ROI &amp; Reinvestment</div>
+      <div class="cycle-arrow">&rarr;</div>
+      <div class="cycle-caption">Three streams, one continuous cycle of improvement</div>
+    </div>
+  </div>
+</div>
+
+<section class="stream">
+  <div class="container">
+    <div class="stream-grid">
+      <div>
+        <div class="stream-number">Stream 01</div>
+        <h3 class="stream-name">Cultural Architecture &amp; Change Management</h3>
+        <p class="stream-tagline">"Process is secondary; the people running it are primary."</p>
+        <p class="stream-desc">We don't just hand over a new workflow — we embed the <strong>mindset required to sustain it</strong>. We help maritime organisations shift from traditional, siloed hierarchies to agile, cross-functional teams that can embrace and drive continuous improvement.</p>
+      </div>
+      <div class="stream-items">
+        <div class="stream-item"><div class="item-name">Organisational Health Audit</div><div class="item-desc">Identifying the cultural friction points that slow down ship design and production — before they become costly delays.</div></div>
+        <div class="stream-item"><div class="item-name">Agile for Maritime</div><div class="item-desc">Implementing Scrum and Kanban methodologies specifically tailored for the shipyard environment to increase transparency and delivery velocity.</div></div>
+        <div class="stream-item"><div class="item-name">Leadership Mentoring</div><div class="item-desc">Coaching executives on how to lead digital-first teams and manage the emotional journey of transformation — from resistance to ownership.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stream">
+  <div class="container">
+    <div class="stream-grid reverse">
+      <div>
+        <div class="stream-number">Stream 02</div>
+        <h3 class="stream-name">AI Agent Integration</h3>
+        <p class="stream-tagline">"Liberating your engineers from the Data Tax."</p>
+        <p class="stream-desc">Stop treating AI as a chatbot and start treating it as a <strong>specialised team member</strong>. We help you deploy AI Agents that act as co-pilots for your technical staff — allowing them to focus on creativity and strategic decisions while the agents handle the complexity.</p>
+      </div>
+      <div class="stream-items">
+        <div class="stream-item"><div class="item-name">Automated Design Agents</div><div class="item-desc">Deploying AI to handle repetitive naval architecture tasks — structural weight optimisation, compartment layouts, stability checks — reducing lead times significantly.</div></div>
+        <div class="stream-item"><div class="item-name">Knowledge-Base Agents</div><div class="item-desc">Creating proprietary AI systems that read your company's decades of legacy drawings and data, making tribal knowledge instantly accessible to every engineer.</div></div>
+        <div class="stream-item"><div class="item-name">Workflow Orchestration</div><div class="item-desc">Implementing AI agents that monitor project health, flagging bottlenecks in the design-to-production handoff before they cause costly delays.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stream">
+  <div class="container">
+    <div class="stream-grid">
+      <div>
+        <div class="stream-number">Stream 03</div>
+        <h3 class="stream-name">Digital Shipbuilding Strategy</h3>
+        <p class="stream-tagline">"Building the bridge between human intuition and digital precision."</p>
+        <p class="stream-desc">We help shipyards move beyond basic CAD and PLM. We design a <strong>Digital Thread</strong> that ensures information flows seamlessly from the first sketch to the final weld — eliminating rework, reducing errors, and accelerating time to market.</p>
+      </div>
+      <div class="stream-items">
+        <div class="stream-item"><div class="item-name">Human-Centric Digital Twins</div><div class="item-desc">Developing digital twins that aren't just for monitoring machines, but for empowering the workforce with real-time, actionable data at every stage of the build.</div></div>
+        <div class="stream-item"><div class="item-name">Process De-Risking</div><div class="item-desc">Using simulation and AI to pre-build ships in a virtual environment — identifying human-factors issues and design clashes before they reach the shop floor.</div></div>
+        <div class="stream-item"><div class="item-name">Time-to-Market Acceleration</div><div class="item-desc">Auditing the full business lifecycle to identify where digital tools can shave weeks off the production schedule and improve margin.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ NAVAL ARCHITECTURE ════ -->
+<section class="naval" id="naval">
+  <div class="naval-bg"></div>
+  <div class="container" style="position:relative;z-index:1;">
+
+    <div class="naval-header">
+      <div>
+        <div class="section-eyebrow">Naval Architecture &amp; Engineering</div>
+        <h2 class="section-title">Where the Engineering Begins</h2>
+      </div>
+      <p class="naval-intro">Before transformation, there is craft. Our collective has spent decades in the drawing office and on the waterfront — delivering precise, bespoke engineering for owners and shipyards who demand the best.</p>
+    </div>
+
+    <div class="naval-grid">
+      <div class="naval-card">
+        <div class="naval-card-number">01</div>
+        <h3 class="naval-card-name">Concept Design</h3>
+        <p class="naval-card-tagline">From brief to vessel — with precision.</p>
+        <p class="naval-card-desc">We develop vessel concepts from the initial owner's brief through to a comprehensive preliminary specification — hull form, general arrangement, stability parameters, propulsion selection, and key performance targets. Work that forms the backbone of every subsequent decision.</p>
+        <ul class="naval-card-list">
+          <li>Hull form development &amp; optimisation</li>
+          <li>General arrangement design</li>
+          <li>Stability &amp; hydrostatics</li>
+          <li>Propulsion &amp; power estimates</li>
+          <li>Preliminary weight &amp; cost benchmarking</li>
+        </ul>
+      </div>
+      <div class="naval-card">
+        <div class="naval-card-number">02</div>
+        <h3 class="naval-card-name">Owner's Engineer</h3>
+        <p class="naval-card-tagline">Your interests, represented.</p>
+        <p class="naval-card-desc">Shipbuilding is complex. Contracts are long. Shipyards have their own priorities. We act as the owner's independent technical representative throughout design and construction — making sure specifications are met, risks are flagged early, and your investment is protected at every stage.</p>
+        <ul class="naval-card-list">
+          <li>Contract &amp; specification review</li>
+          <li>Design approval &amp; oversight</li>
+          <li>Shipyard progress monitoring</li>
+          <li>Sea trials &amp; delivery support</li>
+          <li>Independent risk assessment</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="naval-footer">
+      <div class="naval-footer-also">
+        <div class="naval-footer-label">Also available</div>
+        <div class="naval-footer-tags">
+          <span class="naval-tag">Regulatory Compliance</span>
+          <span class="naval-tag">Feasibility Studies</span>
+          <span class="naval-tag">Project Management</span>
+          <span class="naval-tag">Structural Engineering</span>
+        </div>
+      </div>
+      <a href="#contact" class="btn-primary">Discuss a Project</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════ ABOUT ════ -->
+<section class="about-hero" id="about">
+  <div class="about-hero-bg"></div>
+  <div class="container">
+    <div class="section-eyebrow">About R Marine Consultants</div>
+    <h2 class="about-hero-title">People, Culture, and Intelligent Augmentation</h2>
+    <p class="about-hero-sub">We are change agents who focus on the human side of maritime engineering &mdash; helping organisations build a culture of agility where talent is empowered by technology, not burdened by it.</p>
+  </div>
+</section>
+
+<section class="who">
+  <div class="container">
+    <div class="who-grid">
+      <div class="who-text">
+        <div class="section-eyebrow">Who We Are</div>
+        <h3 class="section-title">A Specialist Collective, Delft Based</h3>
+        <p>R Marine Consultants is a <strong>collective of naval architects and marine engineers</strong> united by deep technical expertise and a shared commitment to precision. We work with shipowners, shipyards, and investors across the full design, compliance, and transformation lifecycle.</p>
+        <p>We believe that a shipyard or design firm is not a collection of desks, drydocks, or computers &mdash; it is a <strong>living ecosystem of people and culture</strong>. Real improvement doesn't come from a manual on a shelf. It comes from shifting the mindsets of the people who execute the work.</p>
+        <p>Founded and led by a naval architect and marine engineer with over <strong>20 years of hands-on experience</strong> across superyachts, offshore vessels, and commercial shipping, our collective brings together specialists with equally deep backgrounds &mdash; giving clients access to <strong>over 100 combined years</strong> of maritime expertise.</p>
+        <p>Based in Delft, we operate internationally &mdash; bringing the right expertise to any project, anywhere.</p>
+        <a href="https://www.linkedin.com/in/nikola-radovic-24aba418b/" target="_blank" class="about-link">Connect on LinkedIn &rarr;</a>
+      </div>
+      <div class="who-panel">
+        <div class="pull-quote"><p>"We don't just optimise workflows &mdash; we evolve the way your team thinks and operates. Our goal is to ensure your people have the right culture to innovate and the right AI tools to execute."</p></div>
+        <div class="cap-box">
+          <div class="cap-box-title">Collective Capabilities</div>
+          <div class="cap-tags">
+            <span class="cap-tag">Concept Design</span><span class="cap-tag">Naval Architecture</span><span class="cap-tag">Stability Analysis</span><span class="cap-tag">Structural Engineering</span><span class="cap-tag">Regulatory Compliance</span><span class="cap-tag">Owner's Engineering</span><span class="cap-tag">Project Management</span><span class="cap-tag">AI Agent Integration</span><span class="cap-tag">Organisation Transformation</span><span class="cap-tag">Digital Shipbuilding</span><span class="cap-tag">Maritime SaaS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="philosophy">
+  <div class="container">
+    <div class="philosophy-header">
+      <div class="section-eyebrow" style="justify-content:center;">Our Philosophy</div>
+      <h3 class="section-title">Three Pillars of Maritime Transformation</h3>
+      <p>We don't just optimise workflows &mdash; we evolve the way your team thinks and operates.</p>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar"><div class="pillar-number">01</div><div class="pillar-name">Culture-First Transformation</div><div class="pillar-tagline">"A process is only as fast as the people running it."</div><div class="pillar-desc">We work on the ground to break down silos and foster a high-performance culture that embraces change, values speed, and rewards lean thinking. Transformation without culture change doesn't stick.</div></div>
+      <div class="pillar"><div class="pillar-number">02</div><div class="pillar-name">The Power of AI Agents</div><div class="pillar-tagline">"Liberating your engineers from the Data Tax."</div><div class="pillar-desc">We move beyond traditional automation. We help you integrate AI agents into your workflows &mdash; not to replace your engineers, but to liberate them. Your team focuses on high-value decisions. The agents handle the complexity.</div></div>
+      <div class="pillar"><div class="pillar-number">03</div><div class="pillar-name">Agility as a Mindset</div><div class="pillar-tagline">"Responsive, not reactive."</div><div class="pillar-desc">We replace rigid, outdated hierarchies with agile structures that allow your organisation to pivot faster and deliver to market sooner. We train teams to anticipate change &mdash; not just respond to it.</div></div>
+    </div>
+    <div class="cycle-strip">
+      <div class="cycle-label">Culture</div><div class="cycle-arrow">&rarr;</div>
+      <div class="cycle-label">AI Agents</div><div class="cycle-arrow">&rarr;</div>
+      <div class="cycle-label">Rapid Delivery</div><div class="cycle-arrow">&rarr;</div>
+      <div class="cycle-label">Reinvestment</div><div class="cycle-arrow">&rarr;</div>
+      <div class="cycle-label">Culture</div>
+      <div class="cycle-sub">The virtuous cycle &mdash; each pillar reinforces the next in a continuous loop of improvement</div>
+    </div>
+  </div>
+</section>
+
+<section class="bridge">
+  <div class="container">
+    <div class="bridge-grid">
+      <div class="bridge-text">
+        <div class="section-eyebrow">Our Goal</div>
+        <h3 class="section-title">Bridging Human Talent and Artificial Intelligence</h3>
+        <p>The future of maritime excellence lies in the <strong>partnership between human intuition and artificial intelligence</strong>. We help you build that bridge.</p>
+        <p>The result is a business that is <strong>fundamentally more efficient and impossible to outpace</strong> &mdash; not because it replaced its people, but because it empowered them.</p>
+      </div>
+      <div class="bridge-visual">
+        <div class="bridge-cell"><div class="bridge-cell-title">Human Talent</div><ul><li>Culture that embraces innovation</li><li>Agile teams that outpace competition</li><li>Engineers focused on creative work</li><li>Leadership that drives change</li></ul></div>
+        <div class="bridge-cell"><div class="bridge-cell-title">AI Agents</div><ul><li>Automated design optimisation</li><li>Knowledge-base agents</li><li>Workflow orchestration</li><li>Real-time project monitoring</li></ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ CONTACT ════ -->
+<section class="contact" id="contact">
+  <div class="contact-bg"></div>
+  <div class="container">
+    <div class="section-eyebrow">Get in Touch</div>
+    <h2 class="contact-title">Let's Discuss Your Project</h2>
+    <p class="contact-sub">Every organisation's journey is different. Tell us where you are — we'll tell you how we can help.</p>
+    <div class="contact-grid">
+      <div class="contact-details">
+        <div class="detail-block"><div class="detail-icon">&#9993;</div><div><div class="detail-label">Email</div><div class="detail-value"><a href="mailto:info@rmarine.nl">info@rmarine.nl</a></div></div></div>
+        <div class="detail-block"><div class="detail-icon">&#9679;</div><div><div class="detail-label">Based In</div><div class="detail-value">Delft, The Netherlands<br>Operating internationally</div></div></div>
+        <div class="detail-block"><div class="detail-icon">&#9670;</div><div><div class="detail-label">Enquiries</div><div class="detail-value">Consultancy projects, AI transformation, feasibility studies, and partnership discussions welcome.</div></div></div>
+        <a href="https://www.linkedin.com/in/nikola-radovic-24aba418b/" target="_blank" class="linkedin-btn">Connect on LinkedIn &rarr;</a>
+      </div>
+      <div class="contact-form">
+        <div class="form-title">Send a Message</div>
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-row">
+            <div class="form-group"><label for="name">Name</label><input type="text" id="name" name="name" placeholder="Your name" required></div>
+            <div class="form-group"><label for="company">Company</label><input type="text" id="company" name="company" placeholder="Your organisation"></div>
+          </div>
+          <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="your@email.com" required></div>
+          <div class="form-group">
+            <label for="type">Enquiry Type</label>
+            <select id="type" name="type">
+              <option value="" disabled selected>Select an area</option>
+              <option value="transformation">AI &amp; Organisation Transformation</option>
+              <option value="concept">Concept Design</option>
+              <option value="compliance">Regulatory Compliance</option>
+              <option value="owners-engineer">Owner's Engineer</option>
+              <option value="feasibility">Feasibility Study</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell us about your project or challenge..."></textarea></div>
+          <button type="submit" class="btn-submit">Send Message</button>
+          <p class="form-note">We typically respond within one business day.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ FOOTER ════ -->
+<footer>
+  <div class="footer-inner">
+    <a href="#home" class="footer-logo">
+      <div class="logo-mark"><span>R</span></div>
+      <div class="logo-wordmark">
+        <span class="logo-marine">Marine</span>
+        <span class="logo-consultants">Consultants</span>
+      </div>
+    </a>
+    <span class="footer-copy">&copy; 2026 R Marine Consultants. Delft, The Netherlands.</span>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="https://www.linkedin.com/in/nikola-radovic-24aba418b/" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
