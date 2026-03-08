@@ -640,7 +640,8 @@ footer {
       </div>
       <div class="contact-form">
         <div class="form-title">Send a Message</div>
-        <form action="https://formspree.io/f/xaqpnrjv" method="POST">
+        <form id="contact-form" action="https://formspree.io/f/xaqpnrjv" method="POST">
+          <input type="hidden" name="_next" value="https://rmarine.nl">
           <div class="form-row">
             <div class="form-group"><label for="name">Name</label><input type="text" id="name" name="name" placeholder="Your name" required></div>
             <div class="form-group"><label for="company">Company</label><input type="text" id="company" name="company" placeholder="Your organisation"></div>
@@ -662,6 +663,11 @@ footer {
           <button type="submit" class="btn-submit">Send Message</button>
           <p class="form-note">We typically respond within one business day.</p>
         </form>
+        <div id="form-success" style="display:none; text-align:center; padding:3rem 2rem;">
+          <div style="font-size:2rem; margin-bottom:1rem; color:var(--c6);">&#10003;</div>
+          <div style="font-family:'Cinzel',serif; font-size:1.1rem; font-weight:700; color:var(--white); margin-bottom:0.75rem; letter-spacing:0.04em;">Message Sent</div>
+          <p style="font-family:'Inter',sans-serif; font-size:0.85rem; color:var(--c4); line-height:1.6;">Thank you for reaching out. We typically respond within one business day.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -686,6 +692,34 @@ footer {
     </div>
   </div>
 </footer>
+
+<script>
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var form = this;
+  var btn = form.querySelector('.btn-submit');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  }).then(function(response) {
+    if (response.ok) {
+      form.style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    } else {
+      btn.textContent = 'Send Message';
+      btn.disabled = false;
+      alert('Something went wrong. Please try again or email us directly.');
+    }
+  }).catch(function() {
+    btn.textContent = 'Send Message';
+    btn.disabled = false;
+    alert('Something went wrong. Please try again or email us directly.');
+  });
+});
+</script>
 
 </body>
 </html>
