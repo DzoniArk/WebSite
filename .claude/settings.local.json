@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest:*)",
+      "Bash(taskkill:*)",
+      "Bash(npm install)",
+      "Bash(npm run build:*)",
+      "Bash(npm run dev:*)",
+      "Bash(dir:*)",
+      "WebFetch(domain:www.bmt.org)",
+      "WebFetch(domain:www.ral.ca)",
+      "WebFetch(domain:www.vardmarine.com)",
+      "WebFetch(domain:www.glosten.com)",
+      "WebFetch(domain:www.foreship.com)",
+      "Bash(findstr :3000)"
+    ]
+  }
+}

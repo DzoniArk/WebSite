@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>R Monogram — Cinzel Font Variations</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #080E1A;
+      color: #C8C0B4;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      padding: 50px 30px;
+      min-height: 100vh;
+    }
+    h1 {
+      text-align: center;
+      font-size: 1.3rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      color: #8B9BB4;
+    }
+    .subtitle {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #4A5C74;
+      letter-spacing: 0.08em;
+      margin-bottom: 60px;
+    }
+    h2 {
+      text-align: center;
+      font-size: 0.9rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 35px;
+      color: #5A6A80;
+    }
+    .row {
+      display: flex;
+      justify-content: center;
+      gap: 70px;
+      margin-bottom: 70px;
+      flex-wrap: wrap;
+    }
+    .variation {
+      text-align: center;
+    }
+    .variation svg {
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+    }
+    .label {
+      margin-top: 18px;
+    }
+    .label strong {
+      display: block;
+      color: #8B9BB4;
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 4px;
+    }
+    .label span {
+      font-size: 0.78rem;
+      color: #4A5C74;
+      letter-spacing: 0.04em;
+    }
+    .divider {
+      border: none;
+      border-top: 1px solid #141E30;
+      margin: 50px auto;
+      max-width: 800px;
+    }
+    .small-row {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin-bottom: 50px;
+      flex-wrap: wrap;
+    }
+    .small-group {
+      text-align: center;
+    }
+    .small-group strong {
+      display: block;
+      font-size: 0.78rem;
+      color: #5A6A80;
+      letter-spacing: 0.1em;
+      margin-bottom: 14px;
+    }
+    .sizes {
+      display: flex;
+      align-items: flex-end;
+      gap: 14px;
+    }
+    .size-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .size-label {
+      font-size: 0.65rem;
+      color: #3A4A5E;
+      margin-top: 6px;
+    }
+    .brand-row {
+      display: flex;
+      justify-content: center;
+      gap: 80px;
+      margin-bottom: 60px;
+      flex-wrap: wrap;
+    }
+    .brand-lockup {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .brand-text {
+      font-family: 'Cormorant Garamond', 'Georgia', serif;
+      letter-spacing: 0.12em;
+    }
+    .brand-text .primary-name {
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: #C5A55A;
+      line-height: 1.1;
+    }
+    .brand-text .secondary-name {
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: #A68B3A;
+      line-height: 1.1;
+    }
+    .light-section {
+      background: #F4F1EC;
+      margin: 0 -30px;
+      padding: 50px 30px;
+    }
+    .light-section h2 {
+      color: #6B7B8C;
+    }
+    .light-section .label strong {
+      color: #3A4A5E;
+    }
+    .light-section .label span {
+      color: #7B8B9C;
+    }
+    .light-section .brand-text .primary-name {
+      color: #8A6E1E;
+    }
+    .light-section .brand-text .secondary-name {
+      color: #6B5518;
+    }
+    .light-section svg {
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.08));
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Shared SVG gradient definitions -->
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <!-- Satin gold for dark backgrounds -->
+      <linearGradient id="satinGold" x1="0.2" y1="0" x2="0.8" y2="1">
+        <stop offset="0%" stop-color="#E8D48B"/>
+        <stop offset="35%" stop-color="#D4B96A"/>
+        <stop offset="60%" stop-color="#C5A55A"/>
+        <stop offset="100%" stop-color="#A68B3A"/>
+      </linearGradient>
+      <!-- Satin gold for light backgrounds -->
+      <linearGradient id="satinGoldDark" x1="0.2" y1="0" x2="0.8" y2="1">
+        <stop offset="0%" stop-color="#9A7B2C"/>
+        <stop offset="40%" stop-color="#876A1E"/>
+        <stop offset="100%" stop-color="#6B5518"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <h1>R Monogram — Cinzel Font Variations</h1>
+  <p class="subtitle">R Marine Consultants / Rocean Brand Family</p>
+
+  <!-- ============================================ -->
+  <!-- LARGE PREVIEWS — DARK BACKGROUND -->
+  <!-- ============================================ -->
+  <h2>Large Preview — Dark Background</h2>
+  <div class="row">
+
+    <!-- VARIATION 1: Cinzel Bold (700) -->
+    <div class="variation">
+      <svg width="160" height="200" viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg">
+        <rect x="6" y="6" width="148" height="188" fill="none" stroke="#C5A55A" stroke-width="2" rx="1"/>
+        <rect x="14" y="14" width="132" height="172" fill="none" stroke="#A68B3A" stroke-width="1.3" rx="1"/>
+        <text x="80" y="143" text-anchor="middle" font-family="'Cinzel', serif" font-size="120" font-weight="700" fill="url(#satinGold)">R</text>
+      </svg>
+      <div class="label">
+        <strong>V1: Cinzel Bold</strong>
+        <span>Weight 700, classic strength</span>
+      </div>
+    </div>
+
+    <!-- VARIATION 2: Cinzel ExtraBold (800) -->
+    <div class="variation">
+      <svg width="160" height="200" viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg">
+        <rect x="6" y="6" width="148" height="188" fill="none" stroke="#C5A55A" stroke-width="2" rx="1"/>
+        <rect x="14" y="14" width="132" height="172" fill="none" stroke="#A68B3A" stroke-width="1.3" rx="1"/>
+        <text x="80" y="143" text-anchor="middle" font-family="'Cinzel', serif" font-size="120" font-weight="800" fill="url(#satinGold)">R</text>
+      </svg>
+      <div class="label">
+        <strong>V2: Cinzel ExtraBold</strong>
+        <span>Weight 800, commanding presence</span>
+      </div>
+    </div>
+
+    <!-- VARIATION 3: Cinzel Black (900) -->
+    <div class="variation">
+      <svg width="160" height="200" viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg">
+        <rect x="6" y="6" width="148" height="188" fill="none" stroke="#C5A55A" stroke-width="2" rx="1"/>
+        <rect x="14" y="14" width="132" height="172" fill="none" stroke="#A68B3A" stroke-width="1.3" rx="1"/>
+        <text x="80" y="148" text-anchor="middle" font-family="'Cinzel', serif" font-size="136" font-weight="900" fill="url(#satinGold)">R</text>
+      </svg>
+      <div class="label">
+        <strong>V3: Cinzel Black</strong>
+        <span>Weight 900, maximum statement</span>
+      </div>
+    </div>
+
+  </div>
+
+  <hr class="divider">
+
+  <!-- ============================================ -->
+  <!-- SMALL SIZE PREVIEWS -->
+  <!-- ============================================ -->
+  <h2>Small Size Readability</h2>
+  <div class="small-row">
+
+    <!-- V1 small sizes -->
+    <div class="small-group">
+      <strong>V1: Cinzel Bold</strong>
+      <div class="sizes">
+        <div class="size-item">
+          <svg width="64" height="80" viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="6" width="148" height="188" fill="none" stroke="#C5A55A" stroke-width="2" rx="1"/>
+            <rect x="14" y="14" width="132" height="172" fill="none" stroke="#A68B3A" stroke-width="1.3" rx="1"/>
+            <text x="80" y="143" text-anchor="middle" font-family="'Cinzel', serif" font-size="120" font-weight="700" fill="url(#satinGold)">R</text>
+          </svg>
+          <span class="size-label">80px</span>
+        </div>
+        <div class="size-item">
+          <svg width="38" height="48" viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="6" width="148" height="188" fill="none" stroke="#C5A55A" stroke-width="2" rx="1"/>
+            <rect x="14" y="14" width="132" height="172" fill="none" stroke="#A68B3A" stroke-width="1.3" rx="1"/>
+            <text x="80" y="143" text-anchor="middle" font-family="'Cinzel', serif" font-size="120" font-weight="700" fill="url(#satinGold)">R</text>
+          </svg>
+          <span class="size-label">48px</span>
+        </div>
+        <div class="size-item">
+          <svg width="26" height="32" viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="6" width="148" height="188" fill="none" stroke="#C5A55A" stroke-width="2" rx="1"/>
+            <rect x="14" y="14" width="132" height="172" fill="none" stroke="#A68B3A" stroke-width="1.3" rx="1"/>
+            <text x="80" y="143" text-anchor="middle" font-family="'Cinzel', serif" font-size="120" font-weight="700" fill="url(#satinGold)">R</text>
+          </svg>
+          <span class="size-label">32px</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- V2 small sizes -->
+    <div class="small-group">
+      <strong>V2: Cinzel ExtraBold</strong>
+      <div class="sizes">
+        <div class="size-item">
+          <svg width="64" height="80" viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="6" width="148" height="188" fill="none" stroke="#C5A55A" stroke-width="2" rx="1"/>
+            <rect x="14" y="14" width="132" height="172" fill="none" stroke="#A68B3A" stroke-width="1.3" rx="1"/>
+            <text x="80" y="143" text-anchor="middle" font-family="'Cinzel', serif" font-size="120" font-weight="800" fill="url(#satinGold)">R</text>
+          </svg>
+          <span class="size-label">80px</span>
+        </div>
+        <div class="size-item">
+          <svg width="38" height="48" viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="6" width="148" height="188" fill="none" stroke="#C5A55A" stroke-width="2" rx="1"/>
+            <rect x="14" y="14" width="132" height="172" fill="none" stroke="#A68B3A" stroke-width="1.3" rx="1"/>
+            <text x="80" y="143" text-anchor="middle" font-family="'Cinzel', serif" font-size="120" font-weight="800" fill="url(#satinGold)">R</text>
+          </svg>
+          <span class="size-label">48px</span>
+        </div>
+        <div class="size-item">
+          <svg width="26" height="32" viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="6" width="148" height="188" fill="none" stroke="#C5A55A" stroke-width="2" rx="1"/>
+            <rect x="14" y="14" width="132" height="172" fill="none" stroke="#A68B3A" stroke-width="1.3" rx="1"/>
+            <text x="80" y="143" text-anchor="middle" font-family="'Cinzel', serif" font-size="120" font-weight="800" fill="url(#satinGold)">R</text>
+          </svg>
+          <span class="size-label">32px</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- V3 small sizes -->
+    <div class="small-group">
+      <strong>V3: Cinzel Black</strong>
+      <div class="sizes">
+        <div class="size-item">
+          <svg width="64" height="80" viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="6" width="148" height="188" fill="none" stroke="#C5A55A" stroke-width="2" rx="1"/>
+            <rect x="14" y="14" width="132" height="172" fill="none" stroke="#A68B3A" stroke-width="1.3" rx="1"/>
+            <text x="80" y="148" text-anchor="middle" font-family="'Cinzel', serif" font-size="136" font-weight="900" fill="url(#satinGold)">R</text>
+          </svg>
+          <span class="size-label">80px</span>
+        </div>
+        <div class="size-item">
+          <svg width="38" height="48" viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="6" width="148" height="188" fill="none" stroke="#C5A55A" stroke-width="2" rx="1"/>
+            <rect x="14" y="14" width="132" height="172" fill="none" stroke="#A68B3A" stroke-width="1.3" rx="1"/>
+            <text x="80" y="148" text-anchor="middle" font-family="'Cinzel', serif" font-size="136" font-weight="900" fill="url(#satinGold)">R</text>
+          </svg>
+          <span class="size-label">48px</span>
+        </div>
+        <div class="size-item">
+          <svg width="26" height="32" viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="6" width="148" height="188" fill="none" stroke="#C5A55A" stroke-width="2" rx="1"/>
+            <rect x="14" y="14" width="132" height="172" fill="none" stroke="#A68B3A" stroke-width="1.3" rx="1"/>
+            <text x="80" y="148" text-anchor="middle" font-family="'Cinzel', serif" font-size="136" font-weight="900" fill="url(#satinGold)">R</text>
+          </svg>
+          <span class="size-label">32px</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <hr class="divider">
+
+  <!-- ============================================ -->
+  <!-- BRAND LOCKUPS — DARK BACKGROUND -->
+  <!-- ============================================ -->
+  <h2>Brand Lockup — Dark Background</h2>
+  <div class="brand-row">
+
+    <!-- V1 lockup -->
+    <div class="brand-lockup">
+      <svg width="51" height="64" viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg">
+        <rect x="6" y="6" width="148" height="188" fill="none" stroke="#C5A55A" stroke-width="2" rx="1"/>
+        <rect x="14" y="14" width="132" height="172" fill="none" stroke="#A68B3A" stroke-width="1.3" rx="1"/>
+        <text x="80" y="143" text-anchor="middle" font-family="'Cinzel', serif" font-size="120" font-weight="700" fill="url(#satinGold)">R</text>
+      </svg>
+      <div class="brand-text">
+        <div class="primary-name">MARINE</div>
+        <div class="secondary-name">CONSULTANTS</div>
+      </div>
+    </div>
+
+    <!-- V2 lockup -->
+    <div class="brand-lockup">
+      <svg width="51" height="64" viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg">
+        <rect x="6" y="6" width="148" height="188" fill="none" stroke="#C5A55A" stroke-width="2" rx="1"/>
+        <rect x="14" y="14" width="132" height="172" fill="none" stroke="#A68B3A" stroke-width="1.3" rx="1"/>
+        <text x="80" y="143" text-anchor="middle" font-family="'Cinzel', serif" font-size="120" font-weight="800" fill="url(#satinGold)">R</text>
+      </svg>
+      <div class="brand-text">
+        <div class="primary-name">MARINE</div>
+        <div class="secondary-name">CONSULTANTS</div>
+      </div>
+    </div>
+
+    <!-- V3 lockup -->
+    <div class="brand-lockup">
+      <svg width="51" height="64" viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg">
+        <rect x="6" y="6" width="148" height="188" fill="none" stroke="#C5A55A" stroke-width="2" rx="1"/>
+        <rect x="14" y="14" width="132" height="172" fill="none" stroke="#A68B3A" stroke-width="1.3" rx="1"/>
+        <text x="80" y="148" text-anchor="middle" font-family="'Cinzel', serif" font-size="136" font-weight="900" fill="url(#satinGold)">R</text>
+      </svg>
+      <div class="brand-text">
+        <div class="primary-name">MARINE</div>
+        <div class="secondary-name">CONSULTANTS</div>
+      </div>
+    </div>
+
+  </div>
+
+  <hr class="divider">
+
+  <!-- ============================================ -->
+  <!-- LIGHT BACKGROUND SECTION -->
+  <!-- ============================================ -->
+  <div class="light-section">
+    <h2>Light Background Versatility</h2>
+    <div class="row">
+
+      <!-- V1 dark on light -->
+      <div class="variation">
+        <svg width="128" height="160" viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="6" width="148" height="188" fill="none" stroke="#9A7B2C" stroke-width="2" rx="1"/>
+          <rect x="14" y="14" width="132" height="172" fill="none" stroke="#7A6020" stroke-width="1.3" rx="1"/>
+          <text x="80" y="143" text-anchor="middle" font-family="'Cinzel', serif" font-size="120" font-weight="700" fill="url(#satinGoldDark)">R</text>
+        </svg>
+        <div class="label">
+          <strong>V1: Cinzel Bold</strong>
+        </div>
+      </div>
+
+      <!-- V2 dark on light -->
+      <div class="variation">
+        <svg width="128" height="160" viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="6" width="148" height="188" fill="none" stroke="#9A7B2C" stroke-width="2" rx="1"/>
+          <rect x="14" y="14" width="132" height="172" fill="none" stroke="#7A6020" stroke-width="1.3" rx="1"/>
+          <text x="80" y="143" text-anchor="middle" font-family="'Cinzel', serif" font-size="120" font-weight="800" fill="url(#satinGoldDark)">R</text>
+        </svg>
+        <div class="label">
+          <strong>V2: Cinzel ExtraBold</strong>
+        </div>
+      </div>
+
+      <!-- V3 dark on light -->
+      <div class="variation">
+        <svg width="128" height="160" viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="6" width="148" height="188" fill="none" stroke="#9A7B2C" stroke-width="2" rx="1"/>
+          <rect x="14" y="14" width="132" height="172" fill="none" stroke="#7A6020" stroke-width="1.3" rx="1"/>
+          <text x="80" y="148" text-anchor="middle" font-family="'Cinzel', serif" font-size="136" font-weight="900" fill="url(#satinGoldDark)">R</text>
+        </svg>
+        <div class="label">
+          <strong>V3: Cinzel Black</strong>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Brand lockups on light -->
+    <h2>Brand Lockup — Light Background</h2>
+    <div class="brand-row">
+      <div class="brand-lockup">
+        <svg width="45" height="56" viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="6" width="148" height="188" fill="none" stroke="#9A7B2C" stroke-width="2" rx="1"/>
+          <rect x="14" y="14" width="132" height="172" fill="none" stroke="#7A6020" stroke-width="1.3" rx="1"/>
+          <text x="80" y="143" text-anchor="middle" font-family="'Cinzel', serif" font-size="120" font-weight="700" fill="url(#satinGoldDark)">R</text>
+        </svg>
+        <div class="brand-text">
+          <div class="primary-name">MARINE</div>
+          <div class="secondary-name">CONSULTANTS</div>
+        </div>
+      </div>
+
+      <div class="brand-lockup">
+        <svg width="45" height="56" viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="6" width="148" height="188" fill="none" stroke="#9A7B2C" stroke-width="2" rx="1"/>
+          <rect x="14" y="14" width="132" height="172" fill="none" stroke="#7A6020" stroke-width="1.3" rx="1"/>
+          <text x="80" y="143" text-anchor="middle" font-family="'Cinzel', serif" font-size="120" font-weight="800" fill="url(#satinGoldDark)">R</text>
+        </svg>
+        <div class="brand-text">
+          <div class="primary-name">MARINE</div>
+          <div class="secondary-name">CONSULTANTS</div>
+        </div>
+      </div>
+
+      <div class="brand-lockup">
+        <svg width="45" height="56" viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="6" width="148" height="188" fill="none" stroke="#9A7B2C" stroke-width="2" rx="1"/>
+          <rect x="14" y="14" width="132" height="172" fill="none" stroke="#7A6020" stroke-width="1.3" rx="1"/>
+          <text x="80" y="148" text-anchor="middle" font-family="'Cinzel', serif" font-size="136" font-weight="900" fill="url(#satinGoldDark)">R</text>
+        </svg>
+        <div class="brand-text">
+          <div class="primary-name">MARINE</div>
+          <div class="secondary-name">CONSULTANTS</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
